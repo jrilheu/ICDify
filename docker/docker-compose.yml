@@ -27,7 +27,7 @@ services:
       Jwt__Key: ICDifySuperSecureJwtKey2025_HardToGuess!
       Jwt__Issuer: ICDifyAuth
       Jwt__Audience: ICDifyClient
-      OpenAI__ApiKey: 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
+      OpenAI__ApiKey: your_api_key_here
     restart: unless-stopped
 volumes:
   postgres_data:
