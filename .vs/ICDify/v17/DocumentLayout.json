@@ -1,0 +1,75 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Sources\\ICDify\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DDE5FC22-EA50-43B8-AF44-80B487E67D49}|ICDify.Tests\\ICDify.Tests.csproj|c:\\sources\\icdify\\icdify.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDE5FC22-EA50-43B8-AF44-80B487E67D49}|ICDify.Tests\\ICDify.Tests.csproj|solutionrelative:icdify.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9172E311-B479-471A-833B-D03A7288E344}|ICDify.Infrastructure\\ICDify.Infrastructure.csproj|c:\\sources\\icdify\\icdify.infrastructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9172E311-B479-471A-833B-D03A7288E344}|ICDify.Infrastructure\\ICDify.Infrastructure.csproj|solutionrelative:icdify.infrastructure\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD2005E7-EC36-45AF-B2CA-45E33345324B}|ICDify.Domain\\ICDify.Domain.csproj|c:\\sources\\icdify\\icdify.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD2005E7-EC36-45AF-B2CA-45E33345324B}|ICDify.Domain\\ICDify.Domain.csproj|solutionrelative:icdify.domain\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Sources\\ICDify\\ICDify.Tests\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "ICDify.Tests\\UnitTest1.cs",
+              "ToolTip": "C:\\Sources\\ICDify\\ICDify.Tests\\UnitTest1.cs",
+              "RelativeToolTip": "ICDify.Tests\\UnitTest1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T01:13:50.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Sources\\ICDify\\ICDify.Infrastructure\\Class1.cs",
+              "RelativeDocumentMoniker": "ICDify.Infrastructure\\Class1.cs",
+              "ToolTip": "C:\\Sources\\ICDify\\ICDify.Infrastructure\\Class1.cs",
+              "RelativeToolTip": "ICDify.Infrastructure\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T01:12:09.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Sources\\ICDify\\ICDify.Domain\\Class1.cs",
+              "RelativeDocumentMoniker": "ICDify.Domain\\Class1.cs",
+              "ToolTip": "C:\\Sources\\ICDify\\ICDify.Domain\\Class1.cs",
+              "RelativeToolTip": "ICDify.Domain\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-30T01:08:36.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
