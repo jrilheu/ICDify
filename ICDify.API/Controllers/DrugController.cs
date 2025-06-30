@@ -1,4 +1,5 @@
 ﻿using ICDify.Application.UseCases;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ICDify.API.Controllers
@@ -22,6 +23,7 @@ namespace ICDify.API.Controllers
         [HttpPost("{drugName}/extract")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [Authorize]
         public async Task<IActionResult> ExtractMappedIndications(string drugName)
         {
             var indications = await _useCase.ExecuteAsync(drugName);

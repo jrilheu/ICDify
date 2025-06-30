@@ -1,6 +1,8 @@
 ﻿using ICDify.Application.DTOs.Auth;
 using ICDify.Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace ICDify.API.Controllers;
 
@@ -19,4 +21,18 @@ public class AuthController : ControllerBase
     [HttpPost("login")]
     public async Task<IActionResult> Login(LoginRequest request)
         => Ok(await _service.LoginAsync(request));
+
+    [HttpGet("me")]
+    [Authorize]
+    public IActionResult Me()
+    {
+        var email = User.FindFirst(ClaimTypes.Email)?.Value;
+        var role = User.FindFirst(ClaimTypes.Role)?.Value;
+
+        return Ok(new
+        {
+            Email = email,
+            Role = role
+        });
+    }
 }
