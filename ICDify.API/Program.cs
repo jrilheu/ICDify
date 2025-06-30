@@ -22,7 +22,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IDrugRepository, DrugRepository>();
-//builder.Services.AddScoped<IIndicationMapper, MockIndicationMapper>();
+builder.Services.AddScoped<IIndicationMapper, MockIndicationMapper>();
 
 // Add application services
 builder.Services.AddScoped<ExtractAndMapIndicationsUseCase>();

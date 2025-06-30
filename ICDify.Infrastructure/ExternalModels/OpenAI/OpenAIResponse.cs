@@ -8,7 +8,7 @@ namespace ICDify.Infrastructure.ExternalModels.OpenAI;
 
 public class OpenAIResponse
 {
-    public List<Choice> Choices { get; set; } = new();
-    public Usage Usage { get; set; }
+    public string Id { get; set; }
     public string Model { get; set; }
+    public string Output { get; set; } 
 }
