@@ -109,12 +109,12 @@ $RECYCLE.BIN/
 *.sln.iml
 
 # Exclude the .vs folder
-.vs/
+.vs/*
 
 # Exclude the obj folder for each project
-ICDify.Domain/obj/
-ICDify.Infrastructure/obj/
-ICDify.Tests/obj/
-ICDify.API/obj/
+ICDify.Domain/obj/*
+ICDify.Infrastructure/obj/*
+ICDify.Tests/obj/*
+ICDify.API/obj/*
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio,windows,macos,linux
