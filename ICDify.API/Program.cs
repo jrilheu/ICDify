@@ -22,7 +22,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IDrugRepository, DrugRepository>();
-builder.Services.AddScoped<IIndicationMapper, MockIndicationMapper>();
+//builder.Services.AddScoped<IIndicationMapper, MockIndicationMapper>();
 
 // Add application services
 builder.Services.AddScoped<ExtractAndMapIndicationsUseCase>();
@@ -52,13 +52,36 @@ builder.Services.AddAuthorization();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc("v0", new OpenApiInfo
+    options.SwaggerDoc("v0", new OpenApiInfo { Title = "ICDify API", Version = "v0" });
+
+    // JWT Bearer Auth
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        Title = "ICDify API",
-        Version = "v0",
-        Description = "Extracts drug indications and maps them to ICD-10 codes"
+        In = ParameterLocation.Header,
+        Description = "Please enter a valid JWT token (e.g., Bearer eyJhbGciOi...)",
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer"
+    });
+
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Id = "Bearer",
+                    Type = ReferenceType.SecurityScheme
+                }
+            },
+            Array.Empty<string>()
+        }
     });
 });
+
+// Service for HTTP requests
+builder.Services.AddHttpClient<IIndicationMapper, LLMIndicationMapper>();
 
 var app = builder.Build();
 
