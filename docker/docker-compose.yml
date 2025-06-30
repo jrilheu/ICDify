@@ -1,13 +1,32 @@
 version: '3.8'
 services:
+  db:
+    image: postgres:14
+    restart: always
+    environment:
+      POSTGRES_DB: icdify_db
+      POSTGRES_USER: icdify_user
+      POSTGRES_PASSWORD: ideal_1234
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
   icdify.api:
     container_name: icdify.api
     build:
       context: ..
       dockerfile: ICDify.API/Dockerfile
+    depends_on:
+      - db
     ports:
       - "8080:8080"
       - "8081:8081"
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: Host=db;Port=5432;Database=icdify_db;Username=icdify_user;Password=ideal_1234
+      Jwt__Key: ICDifySuperSecureJwtKey2025_HardToGuess!
+      Jwt__Issuer: ICDifyAuth
+      Jwt__Audience: ICDifyClient
     restart: unless-stopped
+volumes:
+  postgres_data:
