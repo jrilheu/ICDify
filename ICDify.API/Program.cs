@@ -2,8 +2,13 @@ using ICDify.Application.Interfaces;
 using ICDify.Application.UseCases;
 using ICDify.Infrastructure.Mappers;
 using ICDify.Infrastructure.Persistence;
+using ICDify.Infrastructure.Persistence.Entities;
+using ICDify.Infrastructure.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,9 +24,31 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped<IDrugRepository, DrugRepository>();
 builder.Services.AddScoped<IIndicationMapper, MockIndicationMapper>();
 
-// Add services
+// Add application services
 builder.Services.AddScoped<ExtractAndMapIndicationsUseCase>();
 
+// Add authentication and authorization services
+builder.Services.AddScoped<IPasswordHasher<UserEntity>, PasswordHasher<UserEntity>>();
+
+builder.Services.AddScoped<IAuthService, AuthService>();
+
+builder.Services.AddAuthentication("Bearer")
+    .AddJwtBearer("Bearer", options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!))
+        };
+    });
+
+builder.Services.AddAuthorization();
+
+// Swagger configuration services
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
@@ -35,7 +62,7 @@ builder.Services.AddSwaggerGen(options =>
 
 var app = builder.Build();
 
-// Enable middleware
+// Enable swagger in development
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

@@ -10,6 +10,7 @@ public class ApplicationDbContext : DbContext
 
     public DbSet<DrugEntity> Drugs => Set<DrugEntity>();
     public DbSet<IndicationEntity> Indications => Set<IndicationEntity>();
+    public DbSet<UserEntity> Users => Set<UserEntity>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
