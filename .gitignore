@@ -116,3 +116,4 @@ $RECYCLE.BIN/
 !ICDify.Infrastructure/obj/*
 !ICDify.Tests/obj/*
 !ICDify.API/obj/*
+/ICDify.API/ICDify.API.csproj.user

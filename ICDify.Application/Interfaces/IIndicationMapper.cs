@@ -9,6 +9,6 @@ namespace ICDify.Application.Interfaces
 {
     public  interface IIndicationMapper
     {
-        Task<List<IndicationDto>> ExtractAndMapAsync(string drugName);
+        Task<List<IndicationDto>> ExtractAndMapAsync(string drugName, CancellationToken cancellationToken = default);
     }
 }
