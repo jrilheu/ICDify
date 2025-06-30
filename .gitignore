@@ -116,6 +116,3 @@ $RECYCLE.BIN/
 !ICDify.Infrastructure/obj/*
 !ICDify.Tests/obj/*
 !ICDify.API/obj/*
-
-# End of https://www.toptal.com/developers/gitignore/api/visualstudio,windows,macos,linux
-
